@@ -12,10 +12,8 @@
     "prettier": "npx prettier --check --ignore-unknown ./**/*",
     "eslint": "npx eslint ./ --no-error-on-unmatched-pattern",
     "tsc": "npx tsc --project tsconfig.build.json",
-    "tsc-cjs": "npx tsc --project tsconfig.cjs.json",
-    "next-build": "npx next build",
     "prebuild": "npm run prettier && npm run eslint && npm run clean",
-    "build": "npm run next-build",
+    "build": "next build",
     "pretest": "npm run build",
     "test": "echo 'no tests'",
     "prepack": "npm run test",
@@ -38,6 +36,7 @@
   },
   "homepage": "https://github.com/somod-dev/docs.somod.dev#readme",
   "devDependencies": {
+    "@mui/x-date-pickers": "^5.0.0",
     "@next/bundle-analyzer": "^13.2.4",
     "@types/node": "18.15.0",
     "@types/react": "^18.0.28",
@@ -52,6 +51,8 @@
   },
   "prettier": "prettier-config-sodaru",
   "dependencies": {
+    "@mui/material": "^5.11.12",
+    "mui-extended": "^1.1.0",
     "next": "^13.2.4",
     "prettier-config-sodaru": "^1.0.0",
     "react": "^18.2.0"
