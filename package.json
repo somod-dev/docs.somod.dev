@@ -18,7 +18,7 @@
     "test": "echo 'no tests'",
     "prepack": "npm run test",
     "postversion": "git push --follow-tags",
-    "dev": "next dev",
+    "dev": "set NODE_OPTIONS=--inspect && next dev",
     "start": "next start",
     "export": "npx next export -o static-pages"
   },
@@ -52,9 +52,10 @@
   "prettier": "prettier-config-sodaru",
   "dependencies": {
     "@mui/material": "^5.11.12",
-    "mui-extended": "^1.1.0",
+    "mui-extended": "^1.1.1",
     "next": "^13.2.4",
     "prettier-config-sodaru": "^1.0.0",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "somod-docs": "^1.17.0"
   }
 }
