@@ -12,7 +12,7 @@ import {
 
 const NextLinks = ({ href, children }: LinkComponentType) => {
   return (
-    <Link href={"/" + href} passHref={true}>
+    <Link href={"/" + href} passHref={true} legacyBehavior>
       <a style={{ width: "100%" }}>{children}</a>
     </Link>
   );

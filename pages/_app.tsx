@@ -14,6 +14,7 @@ import Footer from "../demoUtils/footer";
 import { Meta } from "../demoUtils/Meta";
 import { AppProps } from "next/app";
 import { StaticProps } from "../demoUtils/staticProps";
+// import { MenuPahts } from "./[[...slug]]";
 
 const MuiExtendedDemoApp = ({
   Component,

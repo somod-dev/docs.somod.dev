@@ -18,7 +18,7 @@
     "test": "echo 'no tests'",
     "prepack": "npm run test",
     "postversion": "git push --follow-tags",
-    "dev": "set NODE_OPTIONS=--inspect && next dev",
+    "dev": "next dev",
     "start": "next start",
     "export": "npx next export -o static-pages"
   },
