@@ -1,4 +1,4 @@
-import { Box, Container, CssBaseline, Paper, Typography } from "@mui/material";
+import { Box, Container, CssBaseline, Typography } from "@mui/material";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { NextConfig } from "next";
@@ -14,7 +14,6 @@ import Footer from "../demoUtils/footer";
 import { Meta } from "../demoUtils/Meta";
 import { AppProps } from "next/app";
 import { StaticProps } from "../demoUtils/staticProps";
-// import { MenuPahts } from "./[[...slug]]";
 
 const MuiExtendedDemoApp = ({
   Component,
@@ -48,14 +47,7 @@ const MuiExtendedDemoApp = ({
                 </Typography>
                 <hr />
                 <MarkdownPreview>{docContent}</MarkdownPreview>
-                {Component["noDemo"] === undefined ? (
-                  <Paper variant="outlined">
-                    <Box p={2}>
-                      <Typography variant="h5">Demo</Typography>
-                      <Component {...pageProps} />
-                    </Box>
-                  </Paper>
-                ) : null}
+                <Component />
               </Box>
               <Footer />
             </Container>
