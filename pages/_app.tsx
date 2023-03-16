@@ -16,6 +16,10 @@ import { AppProps } from "next/app";
 import { StaticProps } from "../demoUtils/staticProps";
 
 const MuiExtendedDemoApp = ({
+  /**
+   * Compoenent is not used purposefully here
+   */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   Component,
   pageProps
 }: AppProps<StaticProps>) => {
@@ -47,7 +51,6 @@ const MuiExtendedDemoApp = ({
                 </Typography>
                 <hr />
                 <MarkdownPreview>{docContent}</MarkdownPreview>
-                <Component />
               </Box>
               <Footer />
             </Container>
