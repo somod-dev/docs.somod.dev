@@ -1,19 +1,14 @@
-import { Box, Container, CssBaseline, Typography } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { GoogleAnalytics, ThemeOptionsProvider } from "mui-extended";
 import { NextConfig } from "next";
+import { AppProps } from "next/app";
 import getConfig from "next/config";
 import Head from "next/head";
-import {
-  GoogleAnalytics,
-  MarkdownPreview,
-  ThemeOptionsProvider
-} from "mui-extended";
-import { DemoLayout } from "../demoUtils/demoLayout";
-import Footer from "../demoUtils/footer";
-import { Meta } from "../demoUtils/Meta";
-import { AppProps } from "next/app";
-import { StaticProps } from "../demoUtils/staticProps";
+import { Layout } from "../components/Layout";
+import { Meta } from "../components/Meta";
+import { StaticProps } from "../dataFetch/data";
 
 const MuiExtendedDemoApp = ({
   /**
@@ -30,7 +25,7 @@ const MuiExtendedDemoApp = ({
 
   const pages = pageProps.pages || [];
   const meta = pageProps.doc?.meta;
-  const docContent = pageProps.doc?.content || "";
+  const content = pageProps.doc?.content || "";
   const title = pageProps.doc?.title || "";
 
   return (
@@ -43,18 +38,9 @@ const MuiExtendedDemoApp = ({
       <CssBaseline enableColorScheme />
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <ThemeOptionsProvider themeOptions={defaultThemeOptions}>
-          <DemoLayout pages={pages}>
-            <Container maxWidth="lg">
-              <Box minHeight="90vh">
-                <Typography sx={{ marginTop: "16px" }} variant="h4">
-                  {title}
-                </Typography>
-                <hr />
-                <MarkdownPreview>{docContent}</MarkdownPreview>
-              </Box>
-              <Footer />
-            </Container>
-          </DemoLayout>
+          <Layout pages={pages}>
+            <Component title={title} content={content} />
+          </Layout>
         </ThemeOptionsProvider>
       </LocalizationProvider>
     </>

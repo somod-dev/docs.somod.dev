@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import ThumbDownAltIcon from "@mui/icons-material/ThumbDownAlt";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 
-const Footer = () => {
+export const DocFooter = () => {
   const router = useRouter();
   return (
     <>
@@ -17,7 +17,7 @@ const Footer = () => {
               </Typography>
               <Link
                 href={
-                  "https://github.com/sodaru/mui-extended/blob/main/docs/" +
+                  "https://github.com/somod-dev/somod/tree/main/packages/docs/src/" +
                   router.asPath +
                   ".md"
                 }
@@ -39,7 +39,7 @@ const Footer = () => {
                 No
               </Button>
               <Link
-                href={"https://github.com/sodaru/mui-extended/discussions/2"}
+                href={"https://github.com/sodaru/somod/discussions/2"}
                 display="flex"
                 alignItems="center"
                 target="_blank"
@@ -65,5 +65,3 @@ const Footer = () => {
     </>
   );
 };
-
-export default Footer;

@@ -42,8 +42,8 @@ module.exports = withBundleAnalyzer({
   publicRuntimeConfig: {
     defaultThemeOptions: defaultThemeOptions,
     demo: {
-      title: "MUI Extended UI Components",
-      repoUrl: "https://github.com/sodaru/mui-extended"
+      title: "SOMOD",
+      repoUrl: "https://github.com/somod-dev/somod"
     }
   }
 });

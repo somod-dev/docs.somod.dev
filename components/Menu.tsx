@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
 import {
-  ThemeModeSwitch,
   LinkComponentType,
   TreeMenuWithNextLinks,
   TreeMenuWithNextLinksProps,
@@ -59,32 +58,16 @@ export const convertDemoPagesToTreeMenuProps = (
     improveLabels: true
   };
 
-  props.links.sort((a, b) => {
-    const key1 = typeof a == "string" ? a : a.link;
-    const key2 = typeof b == "string" ? b : b.link;
-
-    if (key1 === "/") {
-      return -1;
-    }
-    if (key2 === "/") {
-      return 1;
-    }
-    return key1.localeCompare(key2);
-  });
-
   return props;
 };
 
-export const DemoMenu = ({ pages }: { pages?: string[] }) => {
+export const Menu = ({ pages }: { pages?: string[] }) => {
   return (
     <span>
       <Box p={1}></Box>
       <TreeMenuWithNextLinksSessionPersisted
         {...convertDemoPagesToTreeMenuProps(pages)}
       />
-      <Box display="flex" p={1} justifyContent="center" alignItems="center">
-        <ThemeModeSwitch orientation="vertical" />
-      </Box>
     </span>
   );
 };

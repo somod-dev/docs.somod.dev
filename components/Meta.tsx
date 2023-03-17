@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import Head from "next/head";
-import { DocMeta } from "./staticProps";
+import { DocMeta } from "../dataFetch/data";
 import { useRouter } from "next/router";
 
 export const Meta: FunctionComponent<{ meta?: DocMeta }> = ({ meta }) => {
