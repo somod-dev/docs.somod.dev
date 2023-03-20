@@ -37,6 +37,12 @@
   "homepage": "https://github.com/somod-dev/docs.somod.dev#readme",
   "devDependencies": {
     "@mui/x-date-pickers": "^5.0.0",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.12",
+    "next": "^12.1.0",
+    "prettier-config-sodaru": "^1.0.0",
+    "react": "^18.2.0",
     "@next/bundle-analyzer": "^13.2.4",
     "@types/js-yaml": "^4.0.5",
     "@types/json-schema": "^7.0.11",
@@ -57,13 +63,8 @@
   },
   "prettier": "prettier-config-sodaru",
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.11.12",
+    "@solib/media-kit": "^1.0.0",
     "mui-extended": "^1.1.1",
-    "next": "^12.1.0",
-    "prettier-config-sodaru": "^1.0.0",
-    "react": "^18.2.0",
     "somod-docs": "^1.17.0"
   }
 }

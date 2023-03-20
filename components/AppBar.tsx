@@ -4,7 +4,6 @@ import {
   Toolbar,
   AppBarProps,
   Box,
-  Typography,
   Tooltip,
   Link,
   ButtonGroup,
@@ -20,6 +19,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { ExternalLink, InternalLink } from "./Links";
 import { links } from "../dataFetch/common";
 import { NpmIcon } from "./NpmIcon";
+import { SodaruLogo, SomodTitle } from "@solib/media-kit";
 
 const nextConfig: NextConfig = getConfig();
 
@@ -34,17 +34,14 @@ export const AppBar: FunctionComponent<AppBarProps> = ({ ...props }) => {
           size="large"
           color="inherit"
           aria-label="menu"
-          edge="start"
         >
           <MenuIcn />
         </IconButton>
-        <Box flexGrow={1}>
-          <InternalLink href="/">
-            <Typography variant="h6" sx={{ flexGrow: 1 }}>
-              {nextConfig.publicRuntimeConfig?.demo?.title || ""}
-            </Typography>
-          </InternalLink>
-        </Box>
+
+        <InternalLink href="/" display="flex">
+          <SomodTitle width="8rem" />
+        </InternalLink>
+        <Box flexGrow={1}>&nbsp;</Box>
 
         <Tooltip title="Source" arrow>
           <Link
@@ -72,7 +69,7 @@ export const AppBar: FunctionComponent<AppBarProps> = ({ ...props }) => {
         <Tooltip title={links.sodaruHome.label}>
           <ExternalLink href={links.sodaruHome.link} target="_blank">
             <IconButton size="medium" color="primary">
-              S
+              <SodaruLogo width={19.2} height={19.2} />
             </IconButton>
           </ExternalLink>
         </Tooltip>

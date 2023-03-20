@@ -7,6 +7,7 @@ import {
   Stack,
   Tooltip
 } from "@mui/material";
+import { SomodTitle, SodaruTitle } from "@solib/media-kit";
 import { ThemeModeSwitch, CookiePreference } from "mui-extended";
 import Link from "next/link";
 import { links } from "../dataFetch/common";
@@ -33,7 +34,9 @@ export const Footer = () => {
               <Typography variant="subtitle2" pb={1}>
                 This documentation is built using
               </Typography>
-              <InternalLink href={links.home.link}>SOMOD</InternalLink>
+              <InternalLink href={links.home.link}>
+                <SomodTitle />
+              </InternalLink>
             </Stack>
           </Grid>
           <Grid item xs={12} md={4}>
@@ -56,7 +59,7 @@ export const Footer = () => {
             <Typography variant="subtitle2" pb={1}>
               Developed and Maintained By
             </Typography>
-            SODARU
+            <SodaruTitle width="8rem" />
             <Typography variant="subtitle2">Sodaru Technologies</Typography>
             <ExternalLink href="https://sodaru.com" target="_blank">
               https://sodaru.com
