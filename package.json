@@ -1,6 +1,6 @@
 {
   "name": "docs.somod.dev",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "somod tool documentation",
   "module": "./dist/index.js",
   "typings": "./dist/index.d.js",
