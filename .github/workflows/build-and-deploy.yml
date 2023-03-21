@@ -1,0 +1,41 @@
+name: Publish and Deploy
+
+on:
+  push:
+    tags:
+      - "v*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "npm"
+      - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: npm i
+        env:
+          SOLIB_NPM_REGISTRY_TOKEN: ${{secrets.SOLIB_NPM_REGISTRY_TOKEN}}
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{secrets.GOOGLE_ANALYTICS_ID}}
+      - run: npm run export
+      - name: upload pages artifacts
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./static-pages
+  deploy-pages:
+    needs: build
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

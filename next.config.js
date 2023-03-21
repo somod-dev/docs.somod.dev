@@ -1,6 +1,49 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+// /** @type {import('next').NextConfig} */
 
-module.exports = nextConfig
+/* eslint-disable */
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE_BUNDLE === "true"
+});
+
+/**
+ * @type import("@mui/material").ThemeOptions;
+ */
+const defaultThemeOptions = {
+  palette: {
+    primary: { main: "#004b89" },
+    secondary: { main: "#ffb476" }
+  },
+  components: {
+    MuiFormControl: {
+      defaultProps: { size: "small", margin: "normal" }
+    },
+    MuiSwitch: {
+      defaultProps: { size: "small" }
+    },
+    MuiRadio: {
+      defaultProps: { size: "small" }
+    },
+    MuiCheckbox: {
+      defaultProps: { size: "small" }
+    },
+    MuiButton: {
+      defaultProps: { size: "small" }
+    },
+    MuiIconButton: {
+      defaultProps: { size: "small" }
+    },
+    MuiSvgIcon: {
+      defaultProps: { fontSize: "small" }
+    }
+  }
+};
+
+module.exports = withBundleAnalyzer({
+  publicRuntimeConfig: {
+    defaultThemeOptions: defaultThemeOptions,
+    demo: {
+      title: "SOMOD",
+      repoUrl: "https://github.com/somod-dev/somod"
+    }
+  }
+});
