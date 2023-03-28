@@ -5,7 +5,6 @@ import {
   AppBarProps,
   Box,
   Tooltip,
-  Link,
   ButtonGroup,
   Button
 } from "@mui/material";
@@ -13,15 +12,12 @@ import { FunctionComponent } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { useHideMenu } from "mui-extended";
-import { NextConfig } from "next";
-import getConfig from "next/config";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { ExternalLink, InternalLink } from "./Links";
 import { links } from "../dataFetch/common";
 import { NpmIcon } from "./NpmIcon";
 import { SodaruLogo, SomodTitle } from "@solib/media-kit";
-
-const nextConfig: NextConfig = getConfig();
+import BookIcon from "@mui/icons-material/Book";
 
 export const AppBar: FunctionComponent<AppBarProps> = ({ ...props }) => {
   const hideMenu = useHideMenu();
@@ -43,19 +39,25 @@ export const AppBar: FunctionComponent<AppBarProps> = ({ ...props }) => {
         </InternalLink>
         <Box flexGrow={1}>&nbsp;</Box>
 
-        <Tooltip title="Source" arrow>
-          <Link
-            color="inherit"
-            href={nextConfig.publicRuntimeConfig?.demo?.repoUrl}
-            target="_blank"
-            mr={2}
-          >
-            <ButtonGroup size="small">
-              <Button color="inherit" startIcon={<GitHubIcon />}>
-                Star
-              </Button>
-            </ButtonGroup>
-          </Link>
+        <ExternalLink
+          color="inherit"
+          href={links.blogSomod.link}
+          target="_blank"
+          mr={2}
+        >
+          <ButtonGroup size="small">
+            <Button color="inherit" startIcon={<BookIcon />}>
+              Blog
+            </Button>
+          </ButtonGroup>
+        </ExternalLink>
+
+        <Tooltip title={links.githubSomod.label}>
+          <ExternalLink href={links.githubSomod.link} target="_blank" mr={1}>
+            <IconButton size="medium" color="primary">
+              <GitHubIcon />
+            </IconButton>
+          </ExternalLink>
         </Tooltip>
 
         <Tooltip title={links.npmSomod.label}>
