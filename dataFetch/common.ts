@@ -21,5 +21,9 @@ export const links = {
   githubSomod: {
     link: "https://github.com/somod-dev/somod",
     label: "SOMOD: Find the source in GitHub"
+  },
+  blogSomod: {
+    link: "https://dev.to/search?q=somod",
+    label: "Blog"
   }
 };

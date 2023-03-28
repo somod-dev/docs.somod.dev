@@ -40,10 +40,6 @@ const defaultThemeOptions = {
 
 module.exports = withBundleAnalyzer({
   publicRuntimeConfig: {
-    defaultThemeOptions: defaultThemeOptions,
-    demo: {
-      title: "SOMOD",
-      repoUrl: "https://github.com/somod-dev/somod"
-    }
+    defaultThemeOptions: defaultThemeOptions
   }
 });

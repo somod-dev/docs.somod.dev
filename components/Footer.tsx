@@ -42,8 +42,11 @@ export const Footer = () => {
           <Grid item xs={12} md={4}>
             <Stack>
               <Typography variant="subtitle2" pb={1}>
-                Legal
+                Links
               </Typography>
+              <Link href={links.blogSomod.link} passHref>
+                <ExternalLink>{links.blogSomod.label}</ExternalLink>
+              </Link>
               <Link href={links.contactUs.link} passHref>
                 <ExternalLink>{links.contactUs.label}</ExternalLink>
               </Link>

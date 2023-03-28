@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { FunctionComponent } from "react";
 import {
   LinkComponentType,
   TreeMenuWithNextLinks,
   TreeMenuWithNextLinksProps,
   useStateWithSessionStorage
 } from "mui-extended";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { FunctionComponent } from "react";
 
 const NextLinks = ({ href, children }: LinkComponentType) => {
   return (
@@ -17,14 +17,28 @@ const NextLinks = ({ href, children }: LinkComponentType) => {
   );
 };
 
+/***
+ * if path is A/B/C node ids should be [A,A/B,A/B/C]
+ */
+const getNodeIds = (path: string): string[] => {
+  let prev = null;
+
+  const nodeIds = path.split("/").map(nodeid => {
+    prev = prev ? prev + "/" + nodeid : nodeid;
+    return prev;
+  });
+  return nodeIds;
+};
+
 export const TreeMenuWithNextLinksSessionPersisted: FunctionComponent<
   TreeMenuWithNextLinksProps
 > = props => {
+  const router = useRouter();
+
   const [expanded, setExpanded] = useStateWithSessionStorage<string[]>(
     "layoutMenuExpanded",
-    []
+    getNodeIds(router.asPath.substring(1))
   );
-  const router = useRouter();
   const onNodeToggle = (event: React.SyntheticEvent, nodeIds: string[]) => {
     setExpanded(nodeIds);
   };
