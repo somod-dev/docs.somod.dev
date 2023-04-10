@@ -33,6 +33,7 @@ const MuiExtendedDemoApp = ({
       <GoogleAnalytics />
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_CODE} />
       </Head>
       <Meta meta={meta} />
       <CssBaseline enableColorScheme />
