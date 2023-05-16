@@ -41,5 +41,14 @@ const defaultThemeOptions = {
 module.exports = withBundleAnalyzer({
   publicRuntimeConfig: {
     defaultThemeOptions: defaultThemeOptions
+  },
+  redirects: async () => {
+    return [
+      {
+        source: "/catalog/contribute",
+        destination: "/catalog",
+        permanent: false
+      }
+    ];
   }
 });

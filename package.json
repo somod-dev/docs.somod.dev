@@ -67,6 +67,6 @@
   "dependencies": {
     "@solib/media-kit": "^1.0.0",
     "mui-extended": "^1.1.1",
-    "somod-docs": "^1.17.0"
+    "somod-docs": "^1.17.2"
   }
 }

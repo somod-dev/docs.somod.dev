@@ -1,6 +1,7 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import { MarkdownPreview } from "mui-extended";
 import { InternalLink } from "./Links";
+import { SomodTitle } from "@solib/media-kit";
 
 export const HomeBanner = () => {
   return (
@@ -11,9 +12,12 @@ export const HomeBanner = () => {
       alignItems="center"
       py={4}
     >
-      <Box p={2}>SOMOD</Box>
+      <Box p={2}>
+        <SomodTitle width="16rem" />
+      </Box>
       <Typography variant="h4" textAlign="center">
-        <u>S</u>erverless <u>O</u>ptimized <u>MOD</u>ules
+        <strong>S</strong>erverless <strong>O</strong>ptimized{" "}
+        <strong>MOD</strong>ules
       </Typography>
       <Typography variant="h6" textAlign="center" color="primary">
         One Framework to Develop, Build and Deploy Serverless Applications
