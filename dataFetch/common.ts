@@ -1,5 +1,5 @@
 export const links = {
-  home: { link: "/", label: "Somod" },
+  home: { link: "https://somod.dev", label: "Somod" },
   sodaruHome: {
     link: "https://sodaru.com",
     label: "Sodaru Home"

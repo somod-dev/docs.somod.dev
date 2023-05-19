@@ -11,7 +11,7 @@ import { SomodTitle, SodaruTitle } from "@solib/media-kit";
 import { ThemeModeSwitch, CookiePreference } from "mui-extended";
 import Link from "next/link";
 import { links } from "../dataFetch/common";
-import { ExternalLink, InternalLink } from "./Links";
+import { ExternalLink } from "./Links";
 
 export const Footer = () => {
   const theme = useTheme();
@@ -34,9 +34,9 @@ export const Footer = () => {
               <Typography variant="subtitle2" pb={1}>
                 This documentation is built using
               </Typography>
-              <InternalLink href={links.home.link}>
+              <ExternalLink href={links.home.link}>
                 <SomodTitle />
-              </InternalLink>
+              </ExternalLink>
             </Stack>
           </Grid>
           <Grid item xs={12} md={4}>
