@@ -25,5 +25,9 @@ export const links = {
   blogSomod: {
     link: "https://dev.to/search?q=somod",
     label: "Blog"
+  },
+  twitterSomod: {
+    link: "https://twitter.com/somoddev",
+    label: "Twitter"
   }
 };

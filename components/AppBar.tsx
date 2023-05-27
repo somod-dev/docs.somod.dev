@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { useHideMenu } from "mui-extended";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import TwitterIcon from "@mui/icons-material/Twitter";
 import { ExternalLink, InternalLink } from "./Links";
 import { links } from "../dataFetch/common";
 import { NpmIcon } from "./NpmIcon";
@@ -55,7 +56,7 @@ export const AppBar: FunctionComponent<AppBarProps> = ({ ...props }) => {
         <Tooltip title={links.githubSomod.label}>
           <ExternalLink href={links.githubSomod.link} target="_blank" mr={1}>
             <IconButton size="medium" color="primary">
-              <GitHubIcon />
+              <GitHubIcon sx={{ color: "black" }} />
             </IconButton>
           </ExternalLink>
         </Tooltip>
@@ -63,15 +64,23 @@ export const AppBar: FunctionComponent<AppBarProps> = ({ ...props }) => {
         <Tooltip title={links.npmSomod.label}>
           <ExternalLink href={links.npmSomod.link} target="_blank" mr={1}>
             <IconButton size="medium" color="secondary">
-              <NpmIcon />
+              <NpmIcon width={18} height={18} />
             </IconButton>
           </ExternalLink>
         </Tooltip>
 
         <Tooltip title={links.sodaruHome.label}>
-          <ExternalLink href={links.sodaruHome.link} target="_blank">
+          <ExternalLink href={links.sodaruHome.link} target="_blank" mr={1}>
             <IconButton size="medium" color="primary">
-              <SodaruLogo width={19.2} height={19.2} />
+              <SodaruLogo width={18} height={18} />
+            </IconButton>
+          </ExternalLink>
+        </Tooltip>
+
+        <Tooltip title={links.twitterSomod.label}>
+          <ExternalLink href={links.twitterSomod.link} target="_blank">
+            <IconButton size="medium" color="primary">
+              <TwitterIcon sx={{ color: "#1D9BF0" }} />
             </IconButton>
           </ExternalLink>
         </Tooltip>
